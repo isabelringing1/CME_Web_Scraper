@@ -105,10 +105,14 @@ def insert_row(settles, full_update):
         settles['U.S. Treasury Bond FuturesSettlements']
     ]
     last = xw.Range('A1:OO1').end('down')
-    next_empty = last.offset(1)
-    next_empty_row = xw.Range(next_empty, next_empty.offset(0, 300))
-    next_empty_row.api.Insert()
-    next_empty = next_empty.offset(-1)
+    if str(last.offset(0, 3).value) == "This value has not been updated today. ":
+        next_empty = last
+        last = last.offset(-1)
+    else:
+        next_empty = last.offset(1)
+        next_empty_row = xw.Range(next_empty, next_empty.offset(0, 300))
+        next_empty_row.api.Insert()
+        next_empty = next_empty.offset(-1)
     xw.Range(last, next_empty).formula = last.formula
     xw.Range(next_empty.offset(0, 2), next_empty.offset(0, 9)).value = row
     if full_update:
