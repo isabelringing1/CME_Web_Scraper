@@ -46,4 +46,7 @@ Anyway, you'll need to put the path to the correct chromedriver in the box J2, w
 
 For example, the path I have in my excel sheet is C:\Users\LeeHouse\Desktop\isabel excel stuff\webscraper_project\chromedriver79, but obviously it will be different for different computers.
 
-9. You can add a button that will trigger the webscraper by going to Developer->Insert->Form Control->Button (first one), clicking where you want this button, and then clicking the RunScraper module. When you click this button, the script should start running! A Chrome window will pop up and the software will redirect to the pages needed (you don't need to do anything at this point). 
+9. You can add a button that will trigger the webscraper by going to Developer->Insert->Form Control->Button (first one), clicking where you want this button, and then clicking the RunScraper module. When you click this button, the script should start running! A Chrome window will pop up and the software will redirect to the pages needed (you don't need to do anything at this point).
+
+### Note on running example file:
+The tim curve settlements 121017 test.xlsm file included in this folder should have this code already implemented. To run it, open the excel file, change the chromedriver and Interpreter paths to their right locations, and try running the code by pressing the button. If Virtual Basic complains, check Tools->References and make sure everything that may be marked MISSING is unchecked and that xlwings is checked. If xlwings is missing, go to browse and look for the xlwings.xlam file. 
